@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Flight Booking Form
+  link(rel='stylesheet' href='./css/form.css')
+.container
+  // Replace the navigation header with just the image
+  img.logo(src='./images/Header.PNG' alt='Rim Aviation Logo')
+  form#flightForm(onsubmit='return validateForm()' action='/flightForm' method='POST')
+    .section
+      h3 Passenger Information
+      .form-group
+        label(for='fullName') Full Name *
+        input#fullName(type='text' name='fullName')
+        span#nameError.error
+      .form-group
+        label(for='gender') Gender *
+        select#gender(name='gender')
+          option(value='') -- Select --
+          option(value='male') Male
+          option(value='female') Female
+        span#genderError.error
+      .form-group
+        label(for='dob') Date of Birth *
+        input#dob(type='date' name='dob' placeholder='YYYY/MM/DD')
+        span#dobError.error
+      .form-group
+        label(for='nationality') Nationality *
+        input#nationality(type='text' name='nationality')
+        span#nationalityError.error
+    .section
+      h3 Contact Information
+      .form-group
+        label(for='phone') Phone Number *
+        input#phone(type='number' name='phone')
+        span#phoneError.error
+      .form-group
+        label(for='email') Email Address *
+        input#email(type='email' name='email')
+        span#emailError.error
+      .form-group
+        label(for='pobox') P.O. Box Number
+        input#pobox(type='text' name='pobox')
+      .form-group
+        label(for='emergencyPhone') Emergency Phone Number *
+        input#emergencyPhone(type='number' name='emergencyPhone')
+        span#emergencyPhoneError.error
+    .section
+      h3 Flight Information
+      .form-group
+        label(for='passport') Passport Number *
+        input#passport(type='text' name='passport')
+        span#passportError.error
+      .form-group
+        label(for='visa') Visa Document *
+        input#visa(type='file' name='visa' placeholder='Upload File')
+        span#visaError.error
+      .form-group
+        label(for='departure') Departure City *
+        input#departure(type='text' name='departure')
+        span#departureError.error
+      .form-group
+        label(for='destination') Destination City *
+        input#destination(type='text' name='destination')
+        span#destinationError.error
+    #successMessage.success(style='display: none;')
+      | Form submitted successfully!
+    button(type='submit') SUBMIT
+  script(src='./js/form.js')

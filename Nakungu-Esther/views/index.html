@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking Form</title>
+    <link rel="stylesheet" href="/Nakungu-Esther/public/css/form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Replace the navigation header with just the image -->
+      <img
+        src="/Nakungu-Esther/public/images/Header.PNG"
+        alt="Rim Aviation Logo"
+        class="logo"
+      />
+
+      <form id="flightForm" onsubmit="return validateForm()" action="/submit-flight" method="POST">
+        <div class="section">
+          <h3>Passenger Information</h3>
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" />
+            <span class="error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender *</label>
+            <select id="gender" name="gender">
+              <option value="">-- Select --</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <span class="error" id="genderError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" placeholder="YYYY/MM/DD" />
+            <span class="error" id="dobError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nationality">Nationality *</label>
+            <input type="text" id="nationality" name="nationality" />
+            <span class="error" id="nationalityError"></span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Contact Information</h3>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="number" id="phone" name="phone" />
+            <span class="error" id="phoneError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" />
+            <span class="error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="pobox">P.O. Box Number</label>
+            <input type="text" id="pobox" name="pobox" />
+          </div>
+
+          <div class="form-group">
+            <label for="emergencyPhone">Emergency Phone Number *</label>
+            <input type="number" id="emergencyPhone" name="emergencyPhone" />
+            <span class="error" id="emergencyPhoneError"></span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Flight Information</h3>
+          <div class="form-group">
+            <label for="passport">Passport Number *</label>
+            <input type="text" id="passport" name="passport" />
+            <span class="error" id="passportError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="visa">Upload File *</label>
+            <input type="file" id="visa" name="visa" placeholder="Upload File"/>
+            <span class="error" id="visaError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="departure">Departure City *</label>
+            <input type="text" id="departure" name="departure" />
+            <span class="error" id="departureError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination City *</label>
+            <input type="text" id="destination" name="destination" />
+            <span class="error" id="destinationError"></span>
+          </div>
+        </div>
+        <div id="successMessage" class="success" style="display: none;">
+            Form submitted successfully!
+          </div>
+        
+        <button type="submit">SUBMIT</button>
+        
+      </form>
+    
+
+    <script src="/Nakungu-Esther/public/js/form.js"></script>
+  </body>
+</html>
