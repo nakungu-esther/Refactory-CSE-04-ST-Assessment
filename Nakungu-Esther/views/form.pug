@@ -53,7 +53,7 @@ head
         input#passport(type='text' name='passport')
         span#passportError.error
       .form-group
-        label(for='visa') Visa Document *
+        label(for='visa') Upload File *
         input#visa(type='file' name='visa' placeholder='Upload File')
         span#visaError.error
       .form-group
@@ -66,5 +66,7 @@ head
         span#destinationError.error
     #successMessage.success(style='display: none;')
       | Form submitted successfully!
-    button(type='submit') SUBMIT
+    button#mine(type='submit') SUBMIT
+  // Added the closing form tag here
   script(src='./js/form.js')
+  // Added script tag for JavaScript
